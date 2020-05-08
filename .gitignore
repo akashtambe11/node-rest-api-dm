@@ -1,0 +1,4 @@
+# Folders to be Ignore
+node_modules/
+.vscode/
+.env
