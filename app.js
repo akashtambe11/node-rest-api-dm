@@ -5,8 +5,11 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+// Importing Files
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+const userRoutes = require('./api/routes/user');
+
 
 app.use(morgan('dev')); // To get Methods logs in console 
 app.use('/uploads', express.static('uploads'));
@@ -58,7 +61,9 @@ app.use((req, res, next) => {
 
 // Routing to the Destination Files
 app.use('/products', productRoutes); // ('/Route_Name', Handler)
-app.use('/orders', orderRoutes); // ('/Route_Name', Handler)
+app.use('/orders', orderRoutes); 
+app.use('/user', userRoutes); 
+
 
 // Error Handling
 app.use((req, res, next) => {
